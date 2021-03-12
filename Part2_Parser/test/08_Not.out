@@ -1,0 +1,133 @@
+Rules used : 1 3 4 7 13 14 15 18 23 21 5 4 7 13 14 15 18 23 21 5 4 8 28 31 34 38 37 14 15 17 23 21 41 14 15 18 23 21 35 37 14 15 17 23 21 43 14 15 17 23 21 36 33 3 4 7 13 14 15 18 23 21 6 29 6 
+ Here are all the grammar used with more detail : 
+
+<Program> -> begin <Code> end
+
+<Code> -> <InstList>
+
+<InstList> -> <Instruction> <InstListPrim>
+
+<Instruction> -> <Assign>
+
+<Assign> -> [VarName] := <ExprArith>
+
+<ExprArith> -> <Term> <ExprArith_prim>
+
+<Term> -> <Atom> <prodPrim>
+
+<Atom> -> NUMBER
+
+<prodPrim> -> EPSILON
+
+<ExprArith_prim> -> EPSILON
+
+<InstListPrim> -> SEMICOLON <instList>
+
+<InstList> -> <Instruction> <InstListPrim>
+
+<Instruction> -> <Assign>
+
+<Assign> -> [VarName] := <ExprArith>
+
+<ExprArith> -> <Term> <ExprArith_prim>
+
+<Term> -> <Atom> <prodPrim>
+
+<Atom> -> NUMBER
+
+<prodPrim> -> EPSILON
+
+<ExprArith_prim> -> EPSILON
+
+<InstListPrim> -> SEMICOLON <instList>
+
+<InstList> -> <Instruction> <InstListPrim>
+
+<Instruction> -> <If>
+
+<If> -> if <cond> then <code> <ifPrim> 
+
+<Cond> -> <andCond> <condPrim>
+
+<andCond> -> <simpleCond> <andCondPrim>
+
+<simpleCond> -> not <simpleCond>
+
+<simpleCond> -> <exprArith> <comp> <exprArith>
+
+<ExprArith> -> <Term> <ExprArith_prim>
+
+<Term> -> <Atom> <prodPrim>
+
+<Atom> -> VARNAME
+
+<prodPrim> -> EPSILON
+
+<ExprArith_prim> -> EPSILON
+
+<comp> -> >
+
+<ExprArith> -> <Term> <ExprArith_prim>
+
+<Term> -> <Atom> <prodPrim>
+
+<Atom> -> NUMBER
+
+<prodPrim> -> EPSILON
+
+<ExprArith_prim> -> EPSILON
+
+<andCondPrim> -> and <SimpleCond> <andCondPrim>
+
+<simpleCond> -> <exprArith> <comp> <exprArith>
+
+<ExprArith> -> <Term> <ExprArith_prim>
+
+<Term> -> <Atom> <prodPrim>
+
+<Atom> -> VARNAME
+
+<prodPrim> -> EPSILON
+
+<ExprArith_prim> -> EPSILON
+
+<comp> -> <
+
+<ExprArith> -> <Term> <ExprArith_prim>
+
+<Term> -> <Atom> <prodPrim>
+
+<Atom> -> VARNAME
+
+<prodPrim> -> EPSILON
+
+<ExprArith_prim> -> EPSILON
+
+<andCondPrim> -> EPSILON
+
+<condPrim> -> EPSILON
+
+<Code> -> <InstList>
+
+<InstList> -> <Instruction> <InstListPrim>
+
+<Instruction> -> <Assign>
+
+<Assign> -> [VarName] := <ExprArith>
+
+<ExprArith> -> <Term> <ExprArith_prim>
+
+<Term> -> <Atom> <prodPrim>
+
+<Atom> -> NUMBER
+
+<prodPrim> -> EPSILON
+
+<ExprArith_prim> -> EPSILON
+
+<InstListPrim> -> EPSILON
+
+<ifPrim> -> endif
+
+<InstListPrim> -> EPSILON
+

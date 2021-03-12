@@ -1,0 +1,15 @@
+Rules used : 1 3 4 11 47 6 
+ Here are all the grammar used with more detail : 
+
+<Program> -> begin <Code> end
+
+<Code> -> <InstList>
+
+<InstList> -> <Instruction> <InstListPrim>
+
+<Instruction> -> <Print>
+
+<Print> -> print ( <VarName> )
+
+<InstListPrim> -> EPSILON
+

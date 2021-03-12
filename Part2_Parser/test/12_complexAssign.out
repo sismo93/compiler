@@ -1,0 +1,135 @@
+Rules used : 1 3 4 7 13 14 15 18 23 20 24 15 18 22 26 19 14 15 18 23 20 25 15 18 23 21 22 26 16 18 23 20 25 15 19 14 15 18 23 21 23 20 24 15 19 14 15 18 23 20 24 15 18 23 20 25 15 18 23 21 22 27 18 23 21 6 
+ Here are all the grammar used with more detail : 
+
+<Program> -> begin <Code> end
+
+<Code> -> <InstList>
+
+<InstList> -> <Instruction> <InstListPrim>
+
+<Instruction> -> <Assign>
+
+<Assign> -> [VarName] := <ExprArith>
+
+<ExprArith> -> <Term> <ExprArith_prim>
+
+<Term> -> <Atom> <prodPrim>
+
+<Atom> -> NUMBER
+
+<prodPrim> -> EPSILON
+
+<ExprArith_prim> -> <AddOp> <Term> <ExprArith_prim>
+
+<addOp> -> +
+
+<Term> -> <Atom> <prodPrim>
+
+<Atom> -> NUMBER
+
+<prodPrim> -> <MultOp> <Atom> <prodPrim>
+
+<multOp> -> *
+
+<Atom> -> LEFT_PARENTHESIS <ExprArith> RIGHT_PARENTHESIS
+
+<ExprArith> -> <Term> <ExprArith_prim>
+
+<Term> -> <Atom> <prodPrim>
+
+<Atom> -> NUMBER
+
+<prodPrim> -> EPSILON
+
+<ExprArith_prim> -> <AddOp> <Term> <ExprArith_prim>
+
+<addOp> -> -
+
+<Term> -> <Atom> <prodPrim>
+
+<Atom> -> NUMBER
+
+<prodPrim> -> EPSILON
+
+<ExprArith_prim> -> EPSILON
+
+<prodPrim> -> <MultOp> <Atom> <prodPrim>
+
+<multOp> -> *
+
+<Atom> -> MINUS <Atom>
+
+<Atom> -> NUMBER
+
+<prodPrim> -> EPSILON
+
+<ExprArith_prim> -> <AddOp> <Term> <ExprArith_prim>
+
+<addOp> -> -
+
+<Term> -> <Atom> <prodPrim>
+
+<Atom> -> LEFT_PARENTHESIS <ExprArith> RIGHT_PARENTHESIS
+
+<ExprArith> -> <Term> <ExprArith_prim>
+
+<Term> -> <Atom> <prodPrim>
+
+<Atom> -> NUMBER
+
+<prodPrim> -> EPSILON
+
+<ExprArith_prim> -> EPSILON
+
+<prodPrim> -> EPSILON
+
+<ExprArith_prim> -> <AddOp> <Term> <ExprArith_prim>
+
+<addOp> -> +
+
+<Term> -> <Atom> <prodPrim>
+
+<Atom> -> LEFT_PARENTHESIS <ExprArith> RIGHT_PARENTHESIS
+
+<ExprArith> -> <Term> <ExprArith_prim>
+
+<Term> -> <Atom> <prodPrim>
+
+<Atom> -> NUMBER
+
+<prodPrim> -> EPSILON
+
+<ExprArith_prim> -> <AddOp> <Term> <ExprArith_prim>
+
+<addOp> -> +
+
+<Term> -> <Atom> <prodPrim>
+
+<Atom> -> NUMBER
+
+<prodPrim> -> EPSILON
+
+<ExprArith_prim> -> <AddOp> <Term> <ExprArith_prim>
+
+<addOp> -> -
+
+<Term> -> <Atom> <prodPrim>
+
+<Atom> -> NUMBER
+
+<prodPrim> -> EPSILON
+
+<ExprArith_prim> -> EPSILON
+
+<prodPrim> -> <MultOp> <Atom> <prodPrim>
+
+<multOp> -> /
+
+<Atom> -> NUMBER
+
+<prodPrim> -> EPSILON
+
+<ExprArith_prim> -> EPSILON
+
+<InstListPrim> -> EPSILON
+

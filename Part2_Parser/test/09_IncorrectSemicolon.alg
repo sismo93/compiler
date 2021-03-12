@@ -1,0 +1,3 @@
+begin
+  read(a);
+end
